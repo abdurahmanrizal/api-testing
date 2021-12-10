@@ -15,16 +15,19 @@
 # Rules Code
 
 1. Create your controller with PascalCaseController and meaning name
-   ex: UserController - meaning controller for handle user
+    - ex: UserController - meaning controller for handle user
 2. Create your route with meaning name
-   ex: user - meaning route for handle user
+    - ex: user - meaning route for handle user
 3. if your route have any same path name, recommendation use group for handle route
-   ex: user/profile => GET, user/data/{id} => GET, user/add => POST
-   use: $router->group(['prefix' => 'user'], function() use ($router) {
-   $router->get('profile', 'YOUR_CONTROLLER');
-   $router->get('data/{id}', 'YOUR_CONTROLLER');
-   $router->post('add', 'YOUR_CONTROLLER');
-   });
+    - ex: user/profile => GET, user/data/{id} => GET, user/add => POST
+    - use:
+    ```
+    $router->group(['prefix' => 'user'], function() use ($router) {
+         $router->get('profile', 'YOUR_CONTROLLER');
+         $router->get('data/{id}', 'YOUR_CONTROLLER');
+         $router->post('add', 'YOUR_CONTROLLER');
+    });
+    ```
 
 # Rules Return API
 
